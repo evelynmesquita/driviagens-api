@@ -1,7 +1,7 @@
 import httpStatus from "http-status";
 import flightsService from "../services/flights.services.js";
 
-const create = async (req, res) => {
+const create = async (req, res, next) => {
     try {
         await flightsService.create(req.body);
         res.sendStatus(httpStatus.CREATED);
