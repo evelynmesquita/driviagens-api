@@ -26,7 +26,12 @@ const create = async (body) => {
         throw error.unprocessableEntity("The flight date must be after today's date");
     }
 
-    return flightsRepository.create(body);
+    const createFlight = flightsRepository.create(body);
+
+   // if(!createFlight) throw error.notFound("This destination doesn't exists")
+
+  
+    return createFlight
 };
 
 const read = async (query) => {

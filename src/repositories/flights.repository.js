@@ -11,7 +11,7 @@ const read = (origin, destination, biggerDate, smallerDate, page) => {
     const qtd = 10;
     const params = [];
 
-    let queryString = 
+    let queryString =
         `
             SELECT flights.id, origin.name AS origin, destination.name AS destination, 
             TO_CHAR(flights.date, 'DD-MM-YYYY') AS date FROM flights JOIN cities AS origin 
