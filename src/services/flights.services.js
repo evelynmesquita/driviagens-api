@@ -22,7 +22,7 @@ const validateDateOrder = (smallerDate, biggerDate) => {
 const create = async (body) => {
     const { date } = body;
 
-    if (dayjs().isAfter(dayjs(date, "DD-MM-YYYY"))) {
+    if (dayjs().isAfter(dayjs(date, "YYYY-MM-DD"))) {
         throw error.unprocessableEntity("The flight date must be after today's date");
     }
 
